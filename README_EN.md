@@ -2,6 +2,7 @@
 
 ![Version](https://img.shields.io/badge/Version-1.0.0--RELEASE-blue)
 ![Minecraft](https://img.shields.io/badge/Minecraft-1.21.10-green)
+![Architecture](https://img.shields.io/badge/Architecture-Multi--Threaded-orange)
 ![License](https://img.shields.io/badge/License-Private-red)
 
 **KM-PL** is a high-precision monitoring and optimization software suite for Minecraft servers. Unlike traditional tools, KM-PL isn't just a simple "limiter": it acts as a **lag surgeon**, capable of isolating, tracking, and throttling load sources in real-time without impacting overall server fluidity.
