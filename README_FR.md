@@ -1,7 +1,7 @@
 # 🚀 KM-PL | KrazyMan Performance & Lag-isolation
 
-![Version](https://img.shields.io/badge/Version-1.0.0--SNAPSHOT-blue)
-![Minecraft](https://img.shields.io/badge/Minecraft-1.21.x-green)
+![Version](https://img.shields.io/badge/Version-1.0.0--RELEASE-blue)
+![Minecraft](https://img.shields.io/badge/Minecraft-1.21.10-green)
 ![License](https://img.shields.io/badge/License-Private-red)
 
 **KM-PL** est une suite logicielle de monitoring et d'optimisation de haute précision pour serveurs Minecraft. Contrairement aux outils classiques, KM-PL n'est pas un simple "limiteur" : c'est un **chirurgien du lag** capable d'isoler, de tracker et de brider les sources de charge en temps réel sans impacter la fluidité globale.
