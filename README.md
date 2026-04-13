@@ -1,91 +1,73 @@
-# KMAC Anti-Cheat | Advanced Cybersecurity Solution
-**Version:** 1.0.0-RELEASE  
-**Architecture:** Multi-Threaded / Asynchronous / Statistical Analysis  
-**Target:** Minecraft 1.21.10 (Optimized for Paper/Spigot)  
+# 🚀 KM-PL | KrazyMan Performance & Lag-isolation
+
+![Version](https://img.shields.io/badge/Version-1.0.0--SNAPSHOT-blue)
+![Minecraft](https://img.shields.io/badge/Minecraft-1.21.x-green)
+![License](https://img.shields.io/badge/License-Private-red)
+
+**KM-PL** est une suite logicielle de monitoring et d'optimisation de haute précision pour serveurs Minecraft. Contrairement aux outils classiques, KM-PL n'est pas un simple "limiteur" : c'est un **chirurgien du lag** capable d'isoler, de tracker et de brider les sources de charge en temps réel sans impacter la fluidité globale.
 
 ---
 
-## 1. PROJECT VISION
-KMAC is a high-performance cybersecurity infrastructure designed to replace legacy detection methods. It focuses on mathematical certainty and server-side physics simulation. By offloading 95% of calculations to asynchronous threads, KMAC ensures 20.0 TPS stability even under heavy combat scenarios.
+## 🛠️ Caractéristiques Principales
+
+* **Pulse Tracking™** : Mesure du temps d'exécution des événements en nanosecondes.
+* **Architecture GC-Free** : Conçu pour minimiser les allocations d'objets et éviter les pics de Garbage Collection.
+* **Isolation Sélective** : Bride les chunks ou les entités problématiques de manière isolée.
+* **Diagnostic Avancé** : Plus de 40 commandes de monitoring (TPS, RAM, GC, Threads, Network, Hoppers, Redstone).
+* **Export de Données** : Compatible Prometheus et export JSON pour une visualisation externe.
+* **Smart Support** : Système de diagnostic à distance avec envoi de rapports automatisés sur Discord.
 
 ---
 
-## 2. CORE ARCHITECTURE FEATURES
-### A. High-Performance Engines
-* **Async Computation**: Dedicated thread pools manage complex statistical logic, preventing Main Thread spikes.
-* **Smart Object Pooling**: Intensive reuse of Vectors and Snapshots to mitigate Garbage Collector (GC) pressure and RAM spikes.
-* **Physics Simulation**: Custom-built engine replicating 1:1 Minecraft physics (Gravity, Friction, Inertia, Drag).
-* **Network Lag Compensation**: Entity position historization allowing precise hit validation based on the player's real-time latency (RTT).
+## 📂 Structure du Core
 
-### B. Intelligent Sanction Logic
-* **Multi-Module Correlation**: Exponential Violation Level (VL) scaling when multiple modules flag a player simultaneously.
-* **Dynamic Network Scaling**: Automatic sensitivity adjustment based on server TPS and player Jitter/Ping stability.
-* **Ghost Mode**: Passive monitoring capability for silent data collection without triggering kicks or bans.
+Le plugin est articulé autour de **46 modules** spécialisés, chargés dynamiquement pour optimiser l'empreinte RAM :
 
----
-
-## 3. DETECTION SUITE (65 MODULES)
-
-### COMBAT CATEGORY (43 MODULES)
-* **AutoClicker (A-E)**: Detects CPS limits, timing consistency (Standard Deviation), and mechanical click patterns.
-* **Reach (A-C)**: Ray-tracing validation of hit distance including bounding-box expansion detection.
-* **KillAura & AimAssist**: Analysis of snap-aim, smooth-aim, rotations, and multi-target attack patterns.
-* **Velocity (A-B)**: Strict monitoring of vertical and horizontal knockback modifiers.
-* **Criticals**: Detection of illegal packets and spoofed ground-states during critical hits.
-* **Combat Utility**: Fast-Eat, Auto-Armor, and Inventory-action validation during combat.
-
-### MOVEMENT CATEGORY (22 MODULES)
-* **Flight & Glide**: Validation of vertical motion vectors and air-time sustainability.
-* **Speed**: Horizontal XZ-coordinate validation relative to ground friction and status effects.
-* **Scaffold**: Analysis of placement angles versus rotation and movement consistency.
-* **Blink**: Real-time identification of packet choking and burst-teleportation.
-* **Bypass Detection**: Neutralization of Jesus (Water-walk), Spider (Wall-climb), and NoWeb.
+| Catégorie | Description |
+| :--- | :--- |
+| **Monitoring** | Surveillance TPS, RAM, GC, Threads et Paquets réseau. |
+| **Analyse** | Détection de fuites de mémoire (Leak Detector) et analyseur de Hotspots. |
+| **Optimisation** | Gestion intelligente de l'IA, des Hoppers et des circuits Redstone. |
+| **Diagnostic** | Benchmark de performance intégré et tableau de bord de santé. |
 
 ---
 
-## 4. FORENSIC & SUPPORT SYSTEM (SHIELD SUPPORT)
-KMAC includes a "Black Box" forensic tool for administrators.
+## ⌨️ Commandes Principales
 
-### Black-Box Logging
-Every ban generates a detailed incident report in `/internal/forensics/` including:
-* Exact Module and Model that triggered the flag.
-* Server state (TPS, Player count).
-* Network state (Ping, Jitter, Packet-loss).
-* Player data (Coordinates, Velocity, Active files state).
+Le plugin utilise une commande racine unique : `/kmpl`.
 
-### Support Command: `/kmac support`
-Generates a secure **Support Token** containing:
-* Base64 Encoded Server IP.
-* 6-Character unique session ID.
-* Encrypted Configuration state.
-**Note:** This command automatically transmits a Whitelist of `.yml` files (`config`, `settings`, `checks`) to the developer via a secure, double-obfuscated channel for rapid diagnostic.
+* `/kmpl top` : Affiche les événements les plus lourds (Profiler).
+* `/kmpl chunks` : Identifie les zones de lag géographique.
+* `/kmpl dashboard` : Ouvre l'interface de santé globale.
+* `/kmpl health` : Diagnostic rapide du serveur.
+* `/kmpl support` : Génère un token et envoie un rapport complet (Webhooks Discord).
+* `/kmpl reload` : Recharge la configuration à chaud.
 
 ---
 
-## 5. TERMS OF SERVICE & SUPPORT POLICY
-**IMPORTANT: Read carefully before deployment.**
+## ⚙️ Installation
 
-### 1. Support Cancellation
-Technical support for "False Positives" is strictly void if:
-* **Decompilation**: Any attempt to decompile or reverse-engineer the plugin is detected.
-* **Configuration Tampering**: Support is only provided if `standard_optimized_config` is set to `true`. Any ban occurring while this variable is `false` is the sole responsibility of the administrator.
-
-### 2. Monitoring Capabilities
-We possess proprietary forensic tools to verify the exact state of your configuration at the time of a ban. Our logs track:
-* Detailed module status (Enabled/Disabled).
-* File content at the microsecond of the sanction.
-* Server-side metadata.
-No claim will be investigated if the optimized standard mode was disabled at the time of the incident.
+1. Glissez le fichier `KM-PL.jar` dans votre dossier `plugins/`.
+2. Redémarrez votre serveur.
+3. Configurez les seuils d'alerte dans `plugins/KM-PL/config.yml`.
+4. (Optionnel) Configurez le Webhook Discord dans `settings.yml` pour le support.
 
 ---
 
-## 6. ADMINISTRATIVE COMMANDS
-* `/kmac`: Opens the Main Management GUI.
-* `/kmac reload`: Reloads all configurations.
-* `/kmac config`: Open config GUI.
-* `/kmac debug`: Displays real-time Thread Load, Pool Size, and Data Cache metrics.
-* `/kmac support`: Generates diagnostic token and transmits Whitelisted config files.
+## 🧠 Philosophie de Développement
+
+KM-PL est optimisé **"à la mort"**. Chaque module est géré via une `Map` de services et un système de **Lazy Loading** pour garantir que le plugin n'impacte jamais les performances qu'il est censé protéger.
+* **Priorité Monitor** sur les listeners pour une observation non-intrusive.
+* **Traitement Asynchrone** des statistiques et des rapports de support.
+* **Utilisation de types primitifs** pour éviter le boxing/unboxing coûteux.
 
 ---
 
-**KMAC Anti-Cheat** *The Silence of Performance, the Weight of Justice.* **Exclusive Property of KrazyMan_off** **Distributed via Krazy Studio**
+## 📞 Support & Contact
+
+Ce plugin fait partie de la suite **KrazyStudio**. Pour toute demande de support technique ou rapport de bug :
+* Utilisez la commande `/kmpl support` pour générer un dump technique.
+* Le rapport inclura automatiquement votre configuration et l'état actuel de votre JVM.
+
+---
+> *Propulsé par KrazyMan Performance & Lag-isolation - 2026*
