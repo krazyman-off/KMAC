@@ -1,38 +1,41 @@
-# KMAC Anti-Cheat | Advanced Cybersecurity Solution
-**Version:** 1.0.0-RELEASE  
-**Architecture:** Multi-Threaded / Asynchronous / Statistical Analysis  
-**Target:** Minecraft 1.21.10 (Optimized for Paper/Spigot)  
+# 🛡️ KMAC Anti-Cheat | Advanced Cybersecurity Solution
+
+![Version](https://img.shields.io/badge/Version-1.0.0--RELEASE-red)
+![Minecraft](https://img.shields.io/badge/Minecraft-1.21.10-green)
+![Architecture](https://img.shields.io/badge/Architecture-Multi--Threaded-orange)
+![License](https://img.shields.io/badge/License-Private-blue)
+
+**KMAC** is a high-performance cybersecurity infrastructure designed to replace legacy detection methods. It focuses on mathematical certainty and server-side physics simulation. By offloading 95% of calculations to asynchronous threads, KMAC ensures 20.0 TPS stability even under heavy combat scenarios.
 
 ---
 
-## 1. PROJECT VISION
-KMAC is a high-performance cybersecurity infrastructure designed to replace legacy detection methods. It focuses on mathematical certainty and server-side physics simulation. By offloading 95% of calculations to asynchronous threads, KMAC ensures 20.0 TPS stability even under heavy combat scenarios.
+## 🚀 1. PROJECT VISION
+KMAC is more than just a kick-tool; it is a data-driven analysis engine. It utilizes 1:1 physics simulation and advanced statistical analysis to distinguish between a high-skill player and an illegitimate client user.
 
 ---
 
-## 2. CORE ARCHITECTURE FEATURES
+## 🏗️ 2. CORE ARCHITECTURE FEATURES
 ### A. High-Performance Engines
-* **Async Computation**: Dedicated thread pools manage complex statistical logic, preventing Main Thread spikes.
-* **Smart Object Pooling**: Intensive reuse of Vectors and Snapshots to mitigate Garbage Collector (GC) pressure and RAM spikes.
+* **Async Computation**: Dedicated thread pools manage complex statistical logic, preventing any spikes on the Main Thread.
+* **Smart Object Pooling**: Intensive reuse of Vectors and Snapshots to mitigate Garbage Collector (GC) pressure and prevent RAM spikes.
 * **Physics Simulation**: Custom-built engine replicating 1:1 Minecraft physics (Gravity, Friction, Inertia, Drag).
 * **Network Lag Compensation**: Entity position historization allowing precise hit validation based on the player's real-time latency (RTT).
 
 ### B. Intelligent Sanction Logic
 * **Multi-Module Correlation**: Exponential Violation Level (VL) scaling when multiple modules flag a player simultaneously.
-* **Dynamic Network Scaling**: Automatic sensitivity adjustment based on server TPS and player Jitter/Ping stability.
-* **Ghost Mode**: Passive monitoring capability for silent data collection without triggering kicks or bans.
+* **Dynamic Network Scaling**: Automatic sensitivity adjustment based on server TPS and player connection stability (Jitter/Ping).
+* **Ghost Mode**: Passive monitoring capability for silent data collection without triggering immediate kicks or bans.
 
 ---
 
-## 3. DETECTION SUITE (65 MODULES)
+## 🔍 3. DETECTION SUITE (65 MODULES)
 
 ### COMBAT CATEGORY (43 MODULES)
 * **AutoClicker (A-E)**: Detects CPS limits, timing consistency (Standard Deviation), and mechanical click patterns.
-* **Reach (A-C)**: Ray-tracing validation of hit distance including bounding-box expansion detection.
+* **Reach (A-C)**: Ray-tracing validation of hit distance, including bounding-box expansion detection.
 * **KillAura & AimAssist**: Analysis of snap-aim, smooth-aim, rotations, and multi-target attack patterns.
 * **Velocity (A-B)**: Strict monitoring of vertical and horizontal knockback modifiers.
-* **Criticals**: Detection of illegal packets and spoofed ground-states during critical hits.
-* **Combat Utility**: Fast-Eat, Auto-Armor, and Inventory-action validation during combat.
+* **Criticals**: Detection of illegal packets and spoofed ground-states.
 
 ### MOVEMENT CATEGORY (22 MODULES)
 * **Flight & Glide**: Validation of vertical motion vectors and air-time sustainability.
@@ -43,7 +46,7 @@ KMAC is a high-performance cybersecurity infrastructure designed to replace lega
 
 ---
 
-## 4. FORENSIC & SUPPORT SYSTEM (SHIELD SUPPORT)
+## 📂 4. FORENSIC & SUPPORT SYSTEM (SHIELD SUPPORT)
 KMAC includes a "Black Box" forensic tool for administrators.
 
 ### Black-Box Logging
@@ -51,18 +54,18 @@ Every ban generates a detailed incident report in `/internal/forensics/` includi
 * Exact Module and Model that triggered the flag.
 * Server state (TPS, Player count).
 * Network state (Ping, Jitter, Packet-loss).
-* Player data (Coordinates, Velocity, Active files state).
+* Player data (Coordinates, Velocity, Active config state).
 
 ### Support Command: `/kmac support`
 Generates a secure **Support Token** containing:
 * Base64 Encoded Server IP.
 * 6-Character unique session ID.
 * Encrypted Configuration state.
-**Note:** This command automatically transmits a Whitelist of `.yml` files (`config`, `settings`, `checks`) to the developer via a secure, double-obfuscated channel for rapid diagnostic.
+**Note:** This command automatically transmits Whitelisted `.yml` files (`config`, `settings`, `checks`) to the developer via a secure, double-obfuscated channel for rapid diagnostic.
 
 ---
 
-## 5. TERMS OF SERVICE & SUPPORT POLICY
+## 📜 5. TERMS OF SERVICE & SUPPORT POLICY
 **IMPORTANT: Read carefully before deployment.**
 
 ### 1. Support Cancellation
@@ -75,17 +78,15 @@ We possess proprietary forensic tools to verify the exact state of your configur
 * Detailed module status (Enabled/Disabled).
 * File content at the microsecond of the sanction.
 * Server-side metadata.
-No claim will be investigated if the optimized standard mode was disabled at the time of the incident.
 
 ---
 
-## 6. ADMINISTRATIVE COMMANDS
+## ⌨️ ADMINISTRATIVE COMMANDS
 * `/kmac`: Opens the Main Management GUI.
 * `/kmac reload`: Reloads all configurations.
-* `/kmac config`: Open config GUI.
+* `/kmac config`: Opens the Quick Config menu.
 * `/kmac debug`: Displays real-time Thread Load, Pool Size, and Data Cache metrics.
 * `/kmac support`: Generates diagnostic token and transmits Whitelisted config files.
 
 ---
-
 **KMAC Anti-Cheat** *The Silence of Performance, the Weight of Justice.* **Exclusive Property of KrazyMan_off** **Distributed via Krazy Studio**
