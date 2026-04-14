@@ -67,7 +67,6 @@ alert-system:
   # Seuil d'avertissement (Notification console et administrateurs)
   memory-warning-threshold-percent: 80.0
 ```
-
 ---
 
 ## 🧠 Philosophie de Développement
